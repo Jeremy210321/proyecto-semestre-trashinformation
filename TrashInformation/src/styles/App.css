@@ -1,0 +1,19 @@
+@import '~antd/dist/antd.css';
+
+.general-List {
+    padding: 10px;
+    border-left: 2px solid black;
+}
+
+h1 {
+    font-family: Roboto;
+    font-size: 25px;
+    color: #51CC35;
+    font-weight: revert;
+}
+
+p {
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: bold;
+}

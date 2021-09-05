@@ -1,0 +1,18 @@
+.mapaInfo-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mapaInfo-header Button {
+    border-radius: 20px;
+    background: #51CC35;
+    color: white;
+    border-color: #51CC35;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.initialPage-mapaInfo {
+    padding: 25px;
+}

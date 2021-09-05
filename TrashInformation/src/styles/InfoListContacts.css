@@ -1,0 +1,20 @@
+.initialPage-listContacts {
+    padding: 25px 10px;
+}
+
+.infoListContacts-list {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.infoListContacts-info {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.infoListContacts-text {
+    background-color: #E0E0E0;
+    margin-top: -15px;
+    margin-bottom: 0px;
+    color: #595757;
+}
