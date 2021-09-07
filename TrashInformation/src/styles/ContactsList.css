@@ -1,0 +1,15 @@
+.contactsList-header h1{
+    color: white;
+    background: #51CC35;
+    padding: 10px;
+    text-align: center;
+}
+
+.contactsList-content {
+    padding: 30px;
+}
+
+.contactsList-list {
+    height: 270px;
+    overflow-y: scroll;
+}

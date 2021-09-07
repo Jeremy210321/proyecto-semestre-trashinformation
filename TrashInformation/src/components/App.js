@@ -2,6 +2,7 @@ import "../styles/App.css";
 import { Button } from "antd";
 import { useState } from "react";
 import InicioPage from "../pages/InicioPage";
+import ManageContactsPage from "../pages/ManageContactsPage";
 
 function App() {
   /*
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <InicioPage />
+      <ManageContactsPage />
     </div>
   );
 }

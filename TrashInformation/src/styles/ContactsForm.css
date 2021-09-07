@@ -1,0 +1,22 @@
+.contactsForm-form {
+    padding: 30px;
+}
+
+.contactsForm-form h1 {
+    text-align: center;
+}
+
+.ant-form {
+    margin: 0px 40px 0px -80px;
+}
+
+.contactsform-buttons Button{
+    margin: 10px 25px;
+    border-radius: 20px;
+    background: #51CC35;
+    color: white;
+    border-color: #51CC35;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+}
