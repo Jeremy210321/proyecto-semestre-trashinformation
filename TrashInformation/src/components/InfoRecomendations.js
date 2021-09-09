@@ -18,12 +18,16 @@ function InfoRecomendations({ recomendations }) {
   };
 
   return (
-    <div className="infoRecomendations-cards">
+    <div>
       <div>
         <Card
-          style={{ width: 300 }}
+          className="infoRecomendations-card"
           cover={
-            <img alt={recomendations.Title} src={recomendations.PortalImage} />
+            <img
+              className="infoRecomendations-image"
+              alt={recomendations.Title}
+              src={recomendations.PortalImage}
+            />
           }
           actions={[
             <InfoCircleOutlined
@@ -32,12 +36,12 @@ function InfoRecomendations({ recomendations }) {
             />,
           ]}
         >
-          <Meta title="Card title" />
+          <Meta title={recomendations.Title} />
         </Card>
 
         <ModalRecomendations
           recomendationsDetail={recomendations}
-          onShow={handleShowDetails}
+          onShow={showDetails}
           onClose={handleCloseDetails}
         />
       </div>

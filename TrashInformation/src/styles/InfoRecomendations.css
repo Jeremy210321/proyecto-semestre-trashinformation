@@ -1,3 +1,12 @@
-.infoRecomendations-cards {
-    padding: 30px;
+.ant-card.infoRecomendations-card {
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+.infoRecomendations-image {
+    max-height: 300px;
+    max-width: 280px;
+    min-height: 300px;
+    min-width: 280px;
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
 }

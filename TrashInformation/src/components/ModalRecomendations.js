@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Row } from "antd";
 import Modal from "antd/es/modal/Modal";
+import "../styles/ModalRecomendations.css";
 
 function ModalRecomendations({ recomendationsDetail, onClose, onShow }) {
   return (
@@ -13,7 +14,7 @@ function ModalRecomendations({ recomendationsDetail, onClose, onShow }) {
             Entendido
           </Button>,
         ]}
-        width={464}
+        width={700}
       >
         <Row>
           <Col flex={2}>
@@ -33,15 +34,11 @@ function ModalRecomendations({ recomendationsDetail, onClose, onShow }) {
             </Row>
           </Col>
           <Col flex={3}>
-              <div className="modalRecomendations-content">
-            <h2>{recomendationsDetail.Title}</h2>
-            <h3>
-                {`Categoría: ${recomendationsDetail.Category}`}
-            </h3>
-              <p>
-                  {recomendationsDetail.Description}
-              </p>
-              </div>
+            <div className="modalRecomendations-content">
+              <h2>{recomendationsDetail.Title}</h2>
+              <h3>{`Categoría: ${recomendationsDetail.Category}`}</h3>
+              <p>{recomendationsDetail.Description}</p>
+            </div>
           </Col>
         </Row>
       </Modal>

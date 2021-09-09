@@ -1,7 +1,12 @@
 .modalRecomendations-image {
-
+    max-height: 200px;
+    max-width: 230px;
+    min-height: 200px;
+    min-width: 230px;
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+    margin-bottom: 30px;
 }
 
 .modalRecomendations-content {
-
+    margin-left: -70px;
 }

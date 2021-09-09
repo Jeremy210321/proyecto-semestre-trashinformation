@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/App.css";
 import InfoRecomendations from "../components/InfoRecomendations";
 import { Col, Row } from "antd";
+import "../styles/RecomendationsPage.css";
 
 function RecomendationsPage(props) {
   const recomendations = [
@@ -66,7 +67,7 @@ function RecomendationsPage(props) {
   const [recomendationsList, setRecomendationsList] = useState(recomendations);
 
   return (
-    <div>
+    <div className="recomendationsPage">
       <h1>Aqui van las recomendaciones</h1>
       <Row justify="space-between">
         {recomendationsList.length > 0 ? (
