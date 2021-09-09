@@ -1,5 +1,5 @@
 # proyecto-semestre-trashinformation
-proyecto-semestre-trashinformation created by GitHub Classroom
+
 
 Se debe instalar Formik 
 
