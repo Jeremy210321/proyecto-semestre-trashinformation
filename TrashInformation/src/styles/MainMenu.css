@@ -1,0 +1,30 @@
+.main-menu{
+
+}
+.main-button{
+    background: #2D2D2D;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: white;
+    /*height: 30px;*/
+}
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub{
+    width: 100%;
+    color: rgba(255, 255, 255, 0.65);
+    background: black;
+    justify-content: space-around;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
+    background-color: #81BD00;
+    color: black;
+
+}
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
+    background: rgba(68, 250, 4, 0.4);
+}
+.item{
+    max-height:40px;
+}
+

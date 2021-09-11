@@ -3,7 +3,6 @@ import { Col, message, Row } from "antd";
 import "../styles/App.css";
 import ContactsForm from "../components/ContactsForm";
 import ContactsList from "../components/ContactsList";
-import { db } from "../firebase";
 
 function ManageContactsPage(props) {
   const infoContact = [

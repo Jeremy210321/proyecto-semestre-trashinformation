@@ -1,0 +1,24 @@
+.count-container{
+    display: flex;
+    margin-top: 30px;
+}
+.secondary-button{
+    color: black;
+    background-color: #E5E5E5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+
+}
+.primary-button{
+    background-color:#195176 ;
+    color:#ffffff ;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    margin-left: 10px;
+}
+.count-buttons{
+    display: flex;
+}
+.col-load{
+    margin-left: 30px;
+}

@@ -1,0 +1,4 @@
+# proyecto-semestre-trashinformation
+
+
+

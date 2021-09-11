@@ -6,7 +6,7 @@
 }
 
 h1 {
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-size: 25px;
     color: #51CC35;
     font-weight: revert;
@@ -16,4 +16,63 @@ p {
     font-family: Roboto;
     font-size: 17px;
     font-weight: bold;
+}
+.main-button{
+/*margin: 10px 10px  0 0;*/
+    font-size: 18px;
+}
+.main-header{
+    height: auto;
+    background-color: transparent;
+    min-width: 1440px;
+    margin: 0;
+    padding: 0;
+}
+.main-footer{
+    background: #3B4248;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+
+}
+.main-footer h1{
+    font-size: 40px;
+    line-height: 47px;
+}
+.main-footer p{
+    font-size: 20px;
+    line-height: 28px;
+
+}
+.main-footer p a{
+    text-decoration-line: underline;
+    color: white;
+}
+.icons{
+    font-size: 24px;
+}
+
+.count-button{
+    background: #195176;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: white;
+
+}
+.main-logo{
+    padding-left: 30px;
+
+}
+.header-title{
+    max-height: 80px;
+    max-width: 380px;
+}
+.header-logo{
+    max-height: 80px;
+    margin-left: 70px;
+}
+.col-logo{
+    padding-left: 50px;
 }
