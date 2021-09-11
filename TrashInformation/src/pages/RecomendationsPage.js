@@ -1,20 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../styles/App.css";
-import { Layout, Menu } from "antd";
 import "../styles/RecomendationsPage.css";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-  useRouteMatch,
-} from "react-router-dom";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import RecomendationsMenu from "../components/RecomendationsMenu";
-import RecomendationsListRec from "../components/RecomendationsListRec";
-import RecomendationsListOrg from "../components/RecomendationsListOrg";
-import RecomendationsListCor from "../components/RecomendationsListCor";
-
-const { Header, Footer, Content } = Layout;
+import RecomendationsList from "../components/RecomendationsList";
 
 function RecomendationsPage(props) {
   let match = useRouteMatch();
@@ -109,7 +98,7 @@ function RecomendationsPage(props) {
   const [recomendationsList, setRecomendationsList] = useState(recomendations);
   const [recomendationsRec, setRecomendationsRec] = useState([]);
   const [recomendationsOrg, setRecomendationsOrg] = useState([]);
-  const [recomendationsCor, setRecomendationsCor] = useState();
+  const [recomendationsCor, setRecomendationsCor] = useState([]);
 
   useEffect(() => {
     const newListRec = recomendationsList.filter(
@@ -137,13 +126,13 @@ function RecomendationsPage(props) {
       <RecomendationsMenu />
       <Switch>
         <Route path={`${match.path}/reciclables`}>
-          <RecomendationsListRec recomendationList={recomendationsRec} />
+          <RecomendationsList recomendationList={recomendationsRec} />
         </Route>
         <Route path={`${match.path}/organicos`}>
-          <RecomendationsListOrg recomendationList={recomendationsOrg} />
+          <RecomendationsList recomendationList={recomendationsOrg} />
         </Route>
         <Route path={`${match.path}/coronavirus`}>
-          <RecomendationsListCor recomendationList={recomendationsCor} />
+          <RecomendationsList recomendationList={recomendationsCor} />
         </Route>
       </Switch>
     </div>

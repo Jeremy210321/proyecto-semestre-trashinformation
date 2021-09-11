@@ -1,13 +1,12 @@
-.infoRecomendations-cards {
-    padding: 30px;
+.ant-card.infoNoticias-card {
+    width: 280px;
+    margin-bottom: 30px;
 }
-.ant-card-cover img {
-    border-radius: 15px 15px 0 0;
-}
-.ant-card-bordered {
-    border: 1px solid #f0f0f0;
-    border-radius: 15px 15px 0 0;
-}
-.menuNewsPage{
-    justify-content: center;
+
+.card_image_news {
+    max-height: 300px;
+    max-width: 280px;
+    min-height: 300px;
+    min-width: 280px;
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
 }
