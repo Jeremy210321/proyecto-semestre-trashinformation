@@ -9,7 +9,6 @@ import MainMenu from "./MainMenu";
 import MainFooter from "./MainFooter";
 import MainLogo from "./MainLogo";
 import MiCuentaPage from "../pages/MiCuentaPage";
-import ManageContactsPage from "../pages/ManageContactsPage";
 import RecomendationsPage from "../pages/RecomendationsPage";
 
 const { Header, Footer, Content } = Layout;
@@ -28,9 +27,6 @@ function App() {
 
         <Content className="main-content">
           <Switch>
-            <Route path="/gestionar">
-              <ManageContactsPage />
-            </Route>
             <Route path="/noticias">
               <NoticiasPage />
             </Route>

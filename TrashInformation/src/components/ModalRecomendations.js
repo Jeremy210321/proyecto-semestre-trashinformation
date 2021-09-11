@@ -17,7 +17,7 @@ function ModalRecomendations({ recomendationsDetail, onClose, onShow }) {
         width={700}
       >
         <Row>
-          <Col flex={2}>
+          <Col span={10}>
             <Row>
               <img
                 src={recomendationsDetail.PortalImage}
@@ -33,7 +33,7 @@ function ModalRecomendations({ recomendationsDetail, onClose, onShow }) {
               />
             </Row>
           </Col>
-          <Col flex={3}>
+          <Col span={14}>
             <div className="modalRecomendations-content">
               <h2>{recomendationsDetail.Title}</h2>
               <h3>{`Categoría: ${recomendationsDetail.Category}`}</h3>

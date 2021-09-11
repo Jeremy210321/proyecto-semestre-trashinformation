@@ -18,16 +18,14 @@ p {
     font-weight: bold;
 }
 .main-button{
-/*margin: 10px 10px  0 0;*/
     font-size: 18px;
 }
 .main-header{
     height: auto;
     background-color: transparent;
-    min-width: 1440px;
-    margin: 0;
     padding: 0;
 }
+
 .main-footer{
     background: #3B4248;
     color: white;
@@ -59,7 +57,10 @@ p {
     box-sizing: border-box;
     border-radius: 20px;
     color: white;
-
+    font-size: 18px;
+    text-align: center;
+    padding: 0px 20px;
+    height: 40px;
 }
 .main-logo{
     padding-left: 30px;
