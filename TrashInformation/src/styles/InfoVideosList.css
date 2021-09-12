@@ -1,0 +1,12 @@
+.infoVideos-card {
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+.infoVideos-image {
+    max-height: 300px;
+    max-width: 280px;
+    min-height: 300px;
+    min-width: 280px;
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+}

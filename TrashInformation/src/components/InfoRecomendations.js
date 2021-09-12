@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import { InfoCircleOutlined } from "@ant-design/icons";
 import "../styles/InfoRecomendations.css";
 import ModalRecomendations from "./ModalRecomendations";
@@ -30,10 +30,9 @@ function InfoRecomendations({ recomendations }) {
             />
           }
           actions={[
-            <InfoCircleOutlined
-              key="showDetails"
-              onClick={handleShowDetails}
-            />,
+            <Button type="primary" onClick={handleShowDetails}>
+              <InfoCircleOutlined key="showDetails" /> Ver más
+            </Button>,
           ]}
         >
           <Meta title={recomendations.Title} />

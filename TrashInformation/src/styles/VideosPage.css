@@ -1,0 +1,16 @@
+.videosPage-content {
+    padding: 20px 35px;
+}
+
+.videosPage-slogan {
+    text-align: center;
+    background: rgba(68, 250, 4, 0.4);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+}
+
+.videosPage-cards {
+    margin-top: 40px;
+}
