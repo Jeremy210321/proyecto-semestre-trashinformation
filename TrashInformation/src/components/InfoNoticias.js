@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Card, Row, Col } from "antd";
+import { Card, Row, Col, Button } from "antd";
 import { InfoCircleOutlined } from "@ant-design/icons";
 import "../styles/InfoNoticias.css";
+import ModalNoticias from "./ModalNoticias";
 
 const { Meta } = Card;
 
@@ -28,14 +29,18 @@ function InfoNoticias({ news }) {
             />
           }
           actions={[
-            <InfoCircleOutlined
-              key="showDetails"
-              onClick={handleShowDetails}
-            />,
+            <Button type="primary" onClick={handleShowDetails}>
+              <InfoCircleOutlined key="showDetails" /> Ver más
+            </Button>,
           ]}
         >
           <Meta title={news.title} description={news.small_description} />
         </Card>
+        <ModalNoticias
+          newsDetails={news}
+          onShow={showDetails}
+          onClose={handleCloseDetails}
+        />
       </div>
     </>
   );
