@@ -1,0 +1,9 @@
+.carruselVideos-images {
+    height: 302px;
+    width: 667px;
+    margin: 10px 150px;
+}
+
+carruselVideos-carousel {
+    align-content: center;
+}
