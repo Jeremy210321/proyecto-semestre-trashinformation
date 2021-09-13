@@ -32,6 +32,16 @@ const MainMenu = () => {
           Noticias
         </Link>
       </Menu.Item>
+      <Menu.Item className="main-button">
+        <Link to="/registro" className="item">
+          Registrarse
+        </Link>
+      </Menu.Item>
+      <Menu.Item className="main-button">
+        <Link to="/login" className="item">
+          Ingresar
+        </Link>
+      </Menu.Item>
     </Menu>
   );
 };

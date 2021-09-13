@@ -10,6 +10,8 @@ import MainFooter from "./MainFooter";
 import MainLogo from "./MainLogo";
 import MiCuentaPage from "../pages/MiCuentaPage";
 import RecomendationsPage from "../pages/RecomendationsPage";
+import RegisterPage from "../pages/RegisterPage";
+import LoginPage from "../pages/LoginPage";
 
 const { Header, Footer, Content } = Layout;
 
@@ -41,6 +43,12 @@ function App() {
             </Route>
             <Route path="/mi-cuenta">
               <MiCuentaPage />
+            </Route>
+            <Route path="/registro">
+              <RegisterPage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
             </Route>
             <Route path="/">
               <InicioPage />
