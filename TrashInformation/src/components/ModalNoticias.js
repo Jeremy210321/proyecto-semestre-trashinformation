@@ -15,7 +15,14 @@ function ModalNoticias({ newsDetails, onClose, onShow }) {
         ]}
         width={700}
       >
-        HOLA AQUI HAY UN MODAL
+          Aqui va un modal
+          <div>
+              <iframe
+                  src="https://www.eluniverso.com/noticias/economia/diez-paises-pesqueros-se-compromoten-a-reciclar-1500-toneladas-de-redes-en-desuso-nota/"
+                  style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameBorder="1" marginHeight="0px"
+                  marginWidth="0px" height="500px" width="700px" allowFullScreen key={newsDetails.id}/>
+          </div>
+
       </Modal>
     </div>
   );

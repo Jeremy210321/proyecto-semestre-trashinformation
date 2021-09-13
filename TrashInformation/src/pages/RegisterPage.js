@@ -3,6 +3,7 @@ import { Button, Form, Input, message, Select } from "antd";
 import "../styles/RegisterPage.css";
 import { Option } from "antd/lib/mentions";
 import { auth, db } from "../firebase";
+import {Link} from "react-router-dom";
 
 function RegisterPage() {
   const [form] = Form.useForm();
@@ -54,8 +55,7 @@ function RegisterPage() {
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select style={{ width: 70 }}>
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
+        <Option value="593">+593</Option>
       </Select>
     </Form.Item>
   );
@@ -199,6 +199,9 @@ function RegisterPage() {
           <Button type="primary" htmlType="submit">
             REGISTRARME
           </Button>
+        </Form.Item>
+        <Form.Item>¿Ya tienes cuenta? {""}
+          <Link to="/login"> Inicia Sesión</Link>
         </Form.Item>
       </Form>
     </div>
