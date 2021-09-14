@@ -1,39 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 import CarruselVideos from "../components/CarruselVideos";
 import "../styles/VideosPage.css";
 import InfoVideosList from "../components/InfoVideosList";
 import { Col, Row } from "antd";
+import { request } from "../util/request";
+import { URL_READ_RECOMENDATIONS } from "../config/Constantes";
 
 function VideosPage(props) {
-  const videos = [
-    {
-      title: "Botellas de plástico",
-      credites: "Canal de youtube",
-      videourl: "https://www.youtube.com/watch?v=lcJrxd2tZYw",
-      videolocal: "https://www.youtube.com/watch?v=C1M8WdkqXMA",
-      portal:
-        "https://services.meteored.com/img/article/dia-mundial-del-reciclaje-generamos-471-kg-de-residuos-al-ano-335531-1.jpg",
-    },
-    {
-      title: "Cartones cafeses",
-      credites: "Canal de youtube",
-      videourl: "https://www.youtube.com/watch?v=f6-BXv8Ryoc",
-      videolocal: "https://www.youtube.com/watch?v=C1M8WdkqXMA",
-      portal:
-        "https://www.liderdelemprendimiento.com/wp-content/uploads/2020/03/Reciclaje-empresarial-3000x3000.jpg",
-    },
-    {
-      title: "Plantitas en el hogar",
-      credites: "Canal de youtube",
-      videourl: "https://www.youtube.com/watch?v=rWVgn2NjfGA",
-      videolocal: "https://www.youtube.com/watch?v=C1M8WdkqXMA",
-      portal:
-        "https://twenergy.com/wp-content/uploads/2019/11/formas-recicla-plastico.jpg",
-    },
-  ];
+  const [videosList, setVideosList] = useState([]);
 
-  const [videosList, setVideosList] = useState(videos);
+  useEffect(() => {
+    const loadVideos = async () => {
+      let bodyReadRecomendations = {
+        user_id: "123abc",
+      };
+      const videos = await request(
+        URL_READ_RECOMENDATIONS,
+        bodyReadRecomendations
+      );
+      setVideosList(videos);
+    };
+
+    loadVideos();
+  }, []);
 
   return (
     <>

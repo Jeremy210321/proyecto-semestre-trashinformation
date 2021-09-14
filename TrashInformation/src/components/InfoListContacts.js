@@ -1,32 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../styles/InfoListContacts.css";
 
-function InfoListContacts() {
-  const infoContact = [
-    {
-      Service: "Albañil",
-      Name: "Daniel",
-      Lastname: "Guachamin",
-      Direction: "San Carlos",
-      Telephone: "0998663322",
-    },
-    {
-      Service: "Carpintero",
-      Name: "Guillermo",
-      Lastname: "Gutiérrez",
-      Direction: "San José",
-      Telephone: "0987099923",
-    },
-    {
-      Service: "Carpintero",
-      Name: "Guillermo",
-      Lastname: "Gutiérrez",
-      Direction: "San José",
-      Telephone: "0987099923",
-    },
-  ];
+import { URL_READ_CONTACTS } from "../config/Constantes";
+import { request } from "../util/request";
+export * from "../config/Constantes";
 
-  const [infoListContacts, setInfoListContacts] = useState(infoContact);
+function InfoListContacts() {
+  const [infoListContacts, setInfoListContacts] = useState([]);
+
+  useEffect(() => {
+    const loadContacts = async () => {
+      let bodyReadRecomendations = {
+        user_id: "123abc",
+      };
+      const contacts = await request(URL_READ_CONTACTS, bodyReadRecomendations);
+      setInfoListContacts(contacts);
+    };
+
+    loadContacts();
+  }, []);
 
   return (
     <div>
