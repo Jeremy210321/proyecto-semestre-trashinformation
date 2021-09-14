@@ -18,7 +18,7 @@ const {Header, Footer, Content} = Layout;
 
 function App() {
     return (
-        /*<Router>
+        <Router>
           <Layout>
             <Header className="main-header">
               <>
@@ -60,24 +60,25 @@ function App() {
               <MainFooter />{" "}
             </Footer>
           </Layout>
-        </Router>*/
-        <Router>
-            <Content>
-                <Switch>
-                    <Route path="/registro">
-                        <RegisterPage/>
-                    </Route>
-                    <Route path="/login">
-                        <LoginPage/>
-                    </Route>
-                    <Route path="/recuperacion">
-                        <RecuperacionPage />
-                    </Route>
-                </Switch>
-            </Content>
-
-
         </Router>
+        // <Router>
+        //     <Content>
+        //         <Switch>
+        //             <Route path="/registro">
+        //
+        //                 <RegisterPage/>
+        //             </Route>
+        //             <Route path="/login">
+        //                 <LoginPage/>
+        //             </Route>
+        //             <Route path="/recuperacion">
+        //                 <RecuperacionPage />
+        //             </Route>
+        //         </Switch>
+        //     </Content>
+        //
+        //
+        // </Router>
 
     );
 }
