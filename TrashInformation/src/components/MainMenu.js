@@ -28,7 +28,7 @@ const MainMenu = () => {
         </Link>
       </Menu.Item>
       <Menu.Item className="main-button">
-        <Link to="/noticias" className="item">
+        <Link to="/noticias/" className="item">
           Noticias
         </Link>
       </Menu.Item>

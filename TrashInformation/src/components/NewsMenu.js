@@ -20,7 +20,11 @@ function NewsMenu(props) {
             <Menu.Item>
                 <Link to={`${match.url}/coronavirus`}>Desechos coronavirus</Link>
             </Menu.Item>
-        </Menu></div>
+        </Menu>
+            <h1 className="noticiasPage-slogan">
+                Infórmate y cuida nuestro planeta con las noticias más actuales
+            </h1>
+        </div>
     );
 }
 
