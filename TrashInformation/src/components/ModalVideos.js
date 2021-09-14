@@ -22,10 +22,11 @@ function ModalVideos({ videosDetail, onClose, onShow, reproducir }) {
           <ReactPlayer
             url={videosDetail.videourl}
             className="react-player"
-            playing={reproducir}
+            playing={onShow}
             width="100%"
             height="100%"
             controls="true"
+            stopOnUnmount={true}
           />
         </div>
         <h2>{videosDetail.title}</h2>

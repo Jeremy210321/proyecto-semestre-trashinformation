@@ -13,7 +13,7 @@ const MainMenu = () => {
         </Link>
       </Menu.Item>
       <Menu.Item className="main-button">
-        <Link to="/maneja-tus-desechos" className="item">
+        <Link to="/maneja-tus-desechos/reciclables" className="item">
           Maneja tus desechos
         </Link>
       </Menu.Item>

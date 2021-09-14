@@ -28,24 +28,6 @@ function InfoListContacts() {
 
   const [infoListContacts, setInfoListContacts] = useState(infoContact);
 
-  /*
-  useEffect(() => {
-    const getMovies = async () => {
-      if (searchValue) {
-        const response = await fetch(
-          `https://www.omdbapi.com/?apikey=10261f75&s=${searchValue}&page=${currentPage}`
-        );
-        const moviesArray = await response.json();
-        console.log("moviesArray", moviesArray);
-        setMovies(moviesArray.Search);
-        setTotalResults(moviesArray.totalResults);
-      }
-    };
-
-    getMovies();
-  }, [searchValue, currentPage]);
-   */
-
   return (
     <div>
       <div>
