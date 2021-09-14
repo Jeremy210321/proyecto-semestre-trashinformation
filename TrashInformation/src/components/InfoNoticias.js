@@ -29,9 +29,8 @@ function InfoNoticias({ news }) {
             />
           }
           actions={[
-            <Button type="primary" >
-                <a href={news.font}><InfoCircleOutlined key="showDetails" /> Ver más</a>
-
+            <Button type="primary" onClick={handleShowDetails}>
+              <InfoCircleOutlined key="showDetails" /> Ver más
             </Button>,
           ]}
         >

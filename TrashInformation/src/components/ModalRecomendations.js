@@ -20,24 +20,24 @@ function ModalRecomendations({ recomendationsDetail, onClose, onShow }) {
           <Col span={10}>
             <Row>
               <img
-                src={recomendationsDetail.PortalImage}
-                alt={recomendationsDetail.Title}
+                src={recomendationsDetail.portalImage}
+                alt={recomendationsDetail.title}
                 className="modalRecomendations-image"
               />
             </Row>
             <Row>
               <img
-                src={recomendationsDetail.ProfileImage}
-                alt={recomendationsDetail.Title}
+                src={recomendationsDetail.profileImage}
+                alt={recomendationsDetail.title}
                 className="modalRecomendations-image"
               />
             </Row>
           </Col>
           <Col span={14}>
             <div className="modalRecomendations-content">
-              <h2>{recomendationsDetail.Title}</h2>
-              <h3>{`Categoría: ${recomendationsDetail.Category}`}</h3>
-              <p>{recomendationsDetail.Description}</p>
+              <h2>{recomendationsDetail.title}</h2>
+              <h3>{`Categoría: ${recomendationsDetail.category}`}</h3>
+              <p>{recomendationsDetail.description}</p>
             </div>
           </Col>
         </Row>

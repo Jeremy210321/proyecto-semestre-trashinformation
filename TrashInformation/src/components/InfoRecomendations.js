@@ -25,8 +25,8 @@ function InfoRecomendations({ recomendations }) {
           cover={
             <img
               className="infoRecomendations-image"
-              alt={recomendations.Title}
-              src={recomendations.PortalImage}
+              alt={recomendations.title}
+              src={recomendations.portalImage}
             />
           }
           actions={[
@@ -35,7 +35,7 @@ function InfoRecomendations({ recomendations }) {
             </Button>,
           ]}
         >
-          <Meta title={recomendations.Title} />
+          <Meta title={recomendations.title} />
         </Card>
 
         <ModalRecomendations

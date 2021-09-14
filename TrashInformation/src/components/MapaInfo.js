@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import "../util/request";
 import { Button } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import "../styles/MapaInfo.css";
 import Modal from "antd/es/modal/Modal";
+import { request } from "../util/request";
 
 function MapaInfo(props) {
   const [mostrarDetalleMapa, setMostrarDetalleMapa] = useState(false);
 
   const handleClose = () => {
     setMostrarDetalleMapa(false);
+    request(1);
   };
 
   const handleShowMapaInfo = () => {

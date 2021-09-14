@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 import "../styles/RecomendationsPage.css";
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import RecomendationsMenu from "../components/RecomendationsMenu";
 import RecomendationsList from "../components/RecomendationsList";
+import { request } from "../util/request";
+import { URL_READ_RECOMENDATIONS } from "../config/Constantes";
+export * from "../config/Constantes";
 
 function RecomendationsPage(props) {
   let match = useRouteMatch();
 
-  const recomendations = [
+  let recomendations;
+
+  const recomendation = [
     {
       Title: "Botellas de plástico",
       Category: "Reciclables",
@@ -95,30 +100,46 @@ function RecomendationsPage(props) {
     },
   ];
 
-  const [recomendationsList, setRecomendationsList] = useState(recomendations);
+  const [recomendationsList, setRecomendationsList] = useState(recomendation);
   const [recomendationsRec, setRecomendationsRec] = useState([]);
   const [recomendationsOrg, setRecomendationsOrg] = useState([]);
   const [recomendationsCor, setRecomendationsCor] = useState([]);
 
+  //Esto se copia y adapta a lo que se necesita se cambia el URL_READ_*
+
+  //Kevin coloca el user_id desde inicio de sesion
+
+  const loadRecomendations = async () => {
+    let bodyReadRecomendations = {
+      user_id: "123abc",
+    };
+    recomendations = await request(
+      URL_READ_RECOMENDATIONS,
+      bodyReadRecomendations
+    );
+    console.log("recomendaciones", recomendations);
+    setRecomendationsList(recomendations);
+    console.log("lista", recomendationsList);
+  };
+
   useEffect(() => {
+    loadRecomendations();
+
     const newListRec = recomendationsList.filter(
       (recomendation, index) =>
-        recomendationsList[index].Category === "Reciclables"
+        recomendationsList[index].category === "Reciclables"
     );
     setRecomendationsRec(newListRec);
     const newListOrg = recomendationsList.filter(
       (recomendation, index) =>
-        recomendationsList[index].Category === "Orgánicos"
+        recomendationsList[index].category === "Orgánicos"
     );
     setRecomendationsOrg(newListOrg);
     const newListCor = recomendationsList.filter(
       (recomendation, index) =>
-        recomendationsList[index].Category === "Coronavirus"
+        recomendationsList[index].category === "Coronavirus"
     );
     setRecomendationsCor(newListCor);
-    console.log("list", recomendationsRec);
-    console.log("list", recomendationsOrg);
-    console.log("list", recomendationsCor);
   }, []);
 
   return (
