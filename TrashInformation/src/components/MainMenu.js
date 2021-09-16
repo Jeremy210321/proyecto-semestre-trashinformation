@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import "../styles/MainMenu.css";
 import "../styles/App.css";
 
-const MainMenu = () => {
+const MainMenu = ({ user }) => {
   return (
     <Menu theme="dark" mode="horizontal" className="main-menu">
       <Menu.Item className="main-button">
-        <Link to="/" className="item">
+        <Link to="/initio" className="item">
           Inicio
         </Link>
       </Menu.Item>
@@ -28,20 +28,24 @@ const MainMenu = () => {
         </Link>
       </Menu.Item>
       <Menu.Item className="main-button">
-        <Link to="/noticias/" className="item">
+        <Link to="/noticias/reciclaje" className="item">
           Noticias
         </Link>
       </Menu.Item>
-      <Menu.Item className="main-button">
-        <Link to="/registro" className="item">
-          Registrarse
-        </Link>
-      </Menu.Item>
-      <Menu.Item className="main-button">
-        <Link to="/login" className="item">
-          Ingresar
-        </Link>
-      </Menu.Item>
+      {user === null ? null : user === false ? (
+        <>
+          <Menu.Item className="main-button">
+            <Link to="/registro" className="item">
+              Registrarse
+            </Link>
+          </Menu.Item>
+          <Menu.Item className="main-button">
+            <Link to="/login" className="item">
+              Ingresar
+            </Link>
+          </Menu.Item>
+        </>
+      ) : null}
     </Menu>
   );
 };

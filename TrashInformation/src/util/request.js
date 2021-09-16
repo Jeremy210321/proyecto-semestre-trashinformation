@@ -17,8 +17,6 @@ export const request = async (url, body) => {
       status: response.status,
       data: response.data[peticion.key],
     };
-
-
      */
   } catch (error) {
     /*
@@ -26,7 +24,6 @@ export const request = async (url, body) => {
       status: error.response.status,
       data: error.response.data.respuesta,
     };
-
        */
     console.log("error", error);
   }

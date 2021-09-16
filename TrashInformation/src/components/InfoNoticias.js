@@ -24,23 +24,20 @@ function InfoNoticias({ news }) {
           cover={
             <img
               alt={news.title}
-              src={news.image_url}
+              src={news.imageUrl}
               className="card_image_news"
             />
           }
           actions={[
             <Button type="primary" onClick={handleShowDetails}>
-              <InfoCircleOutlined key="showDetails" /> Ver más
+              <a href={news.font}>
+                <InfoCircleOutlined key="showDetails" /> Ver más
+              </a>
             </Button>,
           ]}
         >
-          <Meta title={news.title} description={news.small_description} />
+          <Meta title={news.title} description={news.smallDescription} />
         </Card>
-        <ModalNoticias
-          newsDetails={news}
-          onShow={showDetails}
-          onClose={handleCloseDetails}
-        />
       </div>
     </>
   );

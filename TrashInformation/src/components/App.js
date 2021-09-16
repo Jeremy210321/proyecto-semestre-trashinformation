@@ -1,6 +1,11 @@
 import { Layout } from "antd";
 import "../styles/App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import InicioPage from "../pages/InicioPage";
 import ContactenosPage from "../pages/ContactenosPage";
 import VideosPage from "../pages/VideosPage";
@@ -12,11 +17,32 @@ import MiCuentaPage from "../pages/MiCuentaPage";
 import RecomendationsPage from "../pages/RecomendationsPage";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
-import RecuperacionPage from "../pages/RecuperacionPage";
+import { useEffect, useState } from "react";
+import { auth } from "../firebase";
 
 const { Header, Footer, Content } = Layout;
 
 function App() {
+  const [authUser, setAuthUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log("user", uid);
+        console.log("usuario", authUser);
+        // ...
+        setAuthUser(user);
+      } else {
+        // User is signed out
+        console.log("No hay sesion activa");
+        setAuthUser(false);
+      }
+    });
+  }, []);
+
   return (
     <Router>
       <Layout>
@@ -25,9 +51,8 @@ function App() {
             {" "}
             <MainLogo />
           </>
-          <MainMenu />
+          <MainMenu user={authUser} />
         </Header>
-
         <Content className="main-content">
           <Switch>
             <Route path="/noticias">
@@ -43,15 +68,28 @@ function App() {
               <RecomendationsPage />
             </Route>
             <Route path="/mi-cuenta">
-              <MiCuentaPage />
+              <MiCuentaPage user={authUser} />
             </Route>
             <Route path="/registro">
-              <RegisterPage />
+              {authUser === null ? (
+                "Cargando.."
+              ) : authUser === false ? (
+                <RegisterPage />
+              ) : (
+                <Redirect to="/initio" />
+              )}
             </Route>
             <Route path="/login">
-              <LoginPage />
+              {authUser === null ? (
+                <h2>CARGANDO...</h2>
+              ) : authUser === false ? (
+                <LoginPage />
+              ) : (
+                <Redirect to="/initio" />
+              )}
             </Route>
-            <Route path="/">
+
+            <Route path="/initio">
               <InicioPage />
             </Route>
           </Switch>
@@ -61,28 +99,6 @@ function App() {
         </Footer>
       </Layout>
     </Router>
-    /*
-        <Router>
-            <Content>
-                <Switch>
-                    <Route path="/registro">
-                        <RegisterPage/>
-                    </Route>
-                    <Route path="/login">
-                        <LoginPage/>
-                    </Route>
-                    <Route path="/recuperacion">
-                        <RecuperacionPage />
-                    </Route>
-                </Switch>
-            </Content>
-
-
-
-
-        </Router>
-
-         */
   );
 }
 

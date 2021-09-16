@@ -15,6 +15,7 @@ function InfoListContacts() {
       };
       const contacts = await request(URL_READ_CONTACTS, bodyReadRecomendations);
       setInfoListContacts(contacts);
+      console.log("contactos", contacts);
     };
 
     loadContacts();
@@ -40,16 +41,16 @@ function InfoListContacts() {
               <strong>Nombre y Apellido:</strong>
             </p>
             <p className="infoListContacts-text">
-              {contact.Name + " " + contact.Lastname}
+              {contact.name + " " + contact.lastname}
             </p>
             <p>
               <strong>Dirección:</strong>
             </p>
-            <p className="infoListContacts-text">{contact.Direction}</p>
+            <p className="infoListContacts-text">{contact.address}</p>
             <p>
               <strong>Número telefónico:</strong>
             </p>
-            <p className="infoListContacts-text">{contact.Telephone}</p>
+            <p className="infoListContacts-text">{contact.phone}</p>
           </div>
         ))}
       </div>

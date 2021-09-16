@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Input, Button, Upload } from "antd";
 import "../styles/App.css";
 import "../styles/MiCuenta.css";
 import { UploadOutlined, InboxOutlined } from "@ant-design/icons";
+import { auth, db } from "../firebase";
+import { useHistory } from "react-router-dom";
 
-function MiCuentaPage(props) {
-  const user = [
-    {
-      names: " Jeremy León",
-      email: "jeremy.leon@gmail.com",
-    },
-  ];
+function MiCuentaPage({ user }) {
+  const history = useHistory();
+  const [us, setUs] = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const snapshot = await db.ref("user/" + user.uid).once("value");
+      const users = snapshot.val();
+      console.log("user", users.name);
+      setUs(users);
+      console.log("", us.name);
+    };
+    getUser();
+  }, []);
+
   const formItemLayout = {
     labelCol: { span: 6 },
     wrapperCol: { span: 14 },
@@ -38,6 +48,13 @@ function MiCuentaPage(props) {
 
     return e && e.fileList;
   };
+
+  const onLogout = async () => {
+    await auth.signOut();
+    console.log("cerrado");
+    history.push("/login");
+  };
+
   return (
     <Row className="count-container">
       <Col span={12} className="col-load">
@@ -88,7 +105,7 @@ function MiCuentaPage(props) {
               },
             ]}
           >
-            <Input allowClear />
+            <Input allowClear placeholder={user.email} />
           </Form.Item>
 
           <Form.Item
@@ -136,7 +153,11 @@ function MiCuentaPage(props) {
           </Form.Item>
 
           <Form.Item {...tailLayout} className="count-buttons">
-            <Button htmlType="submit" className="secondary-button">
+            <Button
+              htmlType="submit"
+              className="secondary-button"
+              onClick={onLogout}
+            >
               Cerrar Sesión
             </Button>
             <Button htmlType="submit" className="primary-button">

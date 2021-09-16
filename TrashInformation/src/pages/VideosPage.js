@@ -5,7 +5,7 @@ import "../styles/VideosPage.css";
 import InfoVideosList from "../components/InfoVideosList";
 import { Col, Row } from "antd";
 import { request } from "../util/request";
-import { URL_READ_RECOMENDATIONS } from "../config/Constantes";
+import { URL_READ_VIDEOS } from "../config/Constantes";
 
 function VideosPage(props) {
   const [videosList, setVideosList] = useState([]);
@@ -15,10 +15,7 @@ function VideosPage(props) {
       let bodyReadRecomendations = {
         user_id: "123abc",
       };
-      const videos = await request(
-        URL_READ_RECOMENDATIONS,
-        bodyReadRecomendations
-      );
+      const videos = await request(URL_READ_VIDEOS, bodyReadRecomendations);
       setVideosList(videos);
     };
 
